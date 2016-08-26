@@ -7,20 +7,27 @@
     <link rel="stylesheet" href="/styles/style.css" />
     <!-- Angular -->
     <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+
     <script type="text/javascript" src="/scripts/ang_app.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/catController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/dogController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/reptileController.js"></script>
 </head>
 <body ng-app="myApp">
-    <h1>Data APIs!</h1>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cats">Cats</a></li>
+                <li><a href="#dogs">Dogs</a></li>
+                <li><a href="#reptiles">Reptiles</a></li>
+            </ul>
+        </div>
 
-    <div class="container" ng-controller="petController">
-      <div class="col-md-6">
-        <button ng-click="getRandomPet()">Random Pet</button>
-      </div>
-      <div class="col-md-6">
-        <h2>{{pet.name.$t}}</h2>
-        <p>{{pet.description.$t}}</p>
-        <img ng-src="{{pet.media.photos.photo[2].$t}}" />
-      </div>
     </div>
+    <main ng-view ></main>
+
 </body>
 </html>
